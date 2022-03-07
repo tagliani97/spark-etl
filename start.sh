@@ -1,0 +1,1 @@
+/home/glue_user/jupyter/jupyter_start.sh

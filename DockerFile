@@ -1,0 +1,9 @@
+FROM amazon/aws-glue-libs:glue_libs_3.0.0_image_01
+
+COPY conf/ "/home/glue_user/spark/conf/"
+COPY start.sh "/home/glue_user/workspace"
+
+RUN echo "Delta Lake" && \
+    wget "https://repo1.maven.org/maven2/io/delta/delta-core_2.12/1.0.1/delta-core_2.12-1.0.1.jar" && \
+    mv delta-core_2.12-1.0.1.jar $SPARK_HOME/jars && \
+    pip install delta-spark==1.0.1 --no-deps
