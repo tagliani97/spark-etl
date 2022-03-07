@@ -1,8 +1,8 @@
-# Spark Development
+## Spark Development
 
 Imagem utilizada para o desenvolvimento, testes e debug de códigos *Spark 3.1*, com suporte para GLUE
 
-# AWS
+## AWS
 
 As conexões aos serviços aws são feitos através da **Access Key** e **Secret Key** do usuário *IAM* que deverão ser passadas para o container como variáveis de ambiente (`AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY`)
 
@@ -20,7 +20,7 @@ Que após a criação poderá ser copiado para dentro do container da seguinte f
     docker cp .aws/ nome_container:/home/glue_user/
 ```
 
-## Docker HUB
+## Docker Hub
 
 Para usufruir da imagem basta fazer o pull do docker hub.
 
