@@ -25,7 +25,7 @@ Que após a criação poderá ser copiado para dentro do container da seguinte f
 Para usufruir da imagem basta fazer o pull do docker hub.
 
 ```sh
-    docker pull tagliani30/spark-etl:3.1.1
+    docker pull tagliani30/spark-etl:1.0.0
 ```
 
 ## Run
@@ -33,14 +33,14 @@ Para usufruir da imagem basta fazer o pull do docker hub.
 O comando a seguir, cria a primeira interação com o container.
 
 ```sh
-docker run -it -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:3.1.1
+docker run -it -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:1.0.0
 ```
 
 Caso queira alocar um volume ao container, e acessar os notebooks que estão sendo executando
 dentro do mesmo basta, criar uma pasta chamado notebooks, dentro do repositorio, e rodar o seguinte comando.
 
 ```sh
-docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:3.1.1
+docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:1.0.0
 ```
 
 ## Jupyter Lab
