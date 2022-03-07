@@ -2,6 +2,24 @@
 
 Imagem utilizada para o desenvolvimento, testes e debug de códigos *Spark 3.1*, com suporte para GLUE
 
+# AWS
+
+As conexões aos serviços aws são feitos através da **Access Key** e **Secret Key** do usuário *IAM* que deverão ser passadas para o container como variáveis de ambiente (`AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY`)
+
+OU
+
+A conexão poderá ser feita, atraves da criação da pasta .aws, no diretorio do repositorio.
+Seguindo a seguinte estrutura
+
+ - config
+ - credentials
+
+Que após a criação poderá ser copiado para dentro do container da seguinte forma
+
+```sh
+    docker cp .aws/ nome_container:/home/glue_user/
+```
+
 # Run
 
 As conexões aos serviços aws são feitos através da **Access Key** e **Secret Key** do usuário *IAM* que deverão ser passadas para o container como variáveis de ambiente (`AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY`)
@@ -11,7 +29,7 @@ e poderam ser acessado atravaes do volume notebooks contido no repositório.
 
 
 ```sh
-docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 tagliani_97/spark-etl
+docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 --name spark-etl tagliani_97/spark-etl
 ```
 
 # Jupyter Lab
