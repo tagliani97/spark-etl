@@ -45,11 +45,10 @@ docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 
 
 ## Jupyter Lab
 
-Para acessar o jupyter no navegador, após a execução do RUN, rodar o seguinte comand dentro do container, no path */home/glue_user/workspace*
-
+Para acessar o jupyter no navegador, após a execução do RUN, rodar o seguinte comand dentro do container.
 
 ```sh
-    bash start.sh
+    bash /home/glue_user/workspace/start.sh
 ```
 
 ### Portas
