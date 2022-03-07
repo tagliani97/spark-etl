@@ -25,7 +25,7 @@ Que após a criação poderá ser copiado para dentro do container da seguinte f
 Para usufruir da imagem basta fazer o pull do docker hub.
 
 ```sh
-    docker pull tagliani30/spark-etl
+    docker pull tagliani30/spark-etl:3.1.1
 ```
 
 ## Run
