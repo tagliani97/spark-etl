@@ -20,28 +20,36 @@ Que após a criação poderá ser copiado para dentro do container da seguinte f
     docker cp .aws/ nome_container:/home/glue_user/
 ```
 
-# Run
+## Docker HUB
+
+Para usufruir da imagem basta fazer o pull do docker hub.
+
+```sh
+    docker pull tagliani30/spark-etl
+```
+
+## Run
 
 O comando a seguir, cria a primeira interação com o container.
 
 ```sh
-docker run -it -p 8888:8888 -p 4040:4040 --name spark-etl tagliani_97/spark-etl
+docker run -it -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:3.1.1
 ```
 
 Caso queira alocar um volume ao container, e acessar os notebooks que estão sendo executando
 dentro do mesmo basta, criar uma pasta chamado notebooks, dentro do repositorio, e rodar o seguinte comando.
 
 ```sh
-docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 --name spark-etl tagliani_97/spark-etl
+docker run -it -v $(pwd)/notebooks:/home/glue_user/jupyter/jupyter_workspace -p 8888:8888 -p 4040:4040 --name spark-etl tagliani30/spark-etl:3.1.1
 ```
 
-# Jupyter Lab
+## Jupyter Lab
 
-Para acessar o jupyter no navegador, após a execução do RUN rodar o seguinte comando, no path
-/home/glue_user/workspace
+Para acessar o jupyter no navegador, após a execução do RUN, rodar o seguinte comand dentro do container, no path */home/glue_user/workspace*
+
 
 ```sh
-bash start.sh
+    bash start.sh
 ```
 
 ### Portas
@@ -49,8 +57,15 @@ bash start.sh
 + Jupyter Notebook: `8888`
 + Console Spark: `4040`
 
-## Build
+### Build
+
+Caso necessite realizar alguma alteração na imagem, basta rodar o seguinte comando, para criar
+uma nova versão para mesma.
 
 ```sh
 docker image build -t <<IMG_NAME> .
 ```
+
+### Fonte
+
+https://github.com/awslabs/aws-glue-libs
